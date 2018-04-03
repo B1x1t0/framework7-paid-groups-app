@@ -71,6 +71,7 @@ $$('#my-login-screen .login-button').on('click', function () {
 
   // Alert username and password
   app.dialog.alert('Username: ' + username + '<br>Password: ' + password);
+  
 });
 
 $$('#getDataTest').on('click', function () {
