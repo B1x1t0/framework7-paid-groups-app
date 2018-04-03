@@ -34,8 +34,8 @@ routes = [
     componentUrl: './pages/groups/page-groups-component.html',
   },
   {
-    path: '/group/:group/',
-    templateUrl: './pages/group.html',
+    path: '/product/:id/',
+    componentUrl: './pages/groups/page-group.html',
   },
   {
     path: '/request-and-load/user/:userId/',
