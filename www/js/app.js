@@ -68,14 +68,14 @@ $$('#my-login-screen .login-button').on('click', function () {
   var username = $$('#my-login-screen [name="username"]').val();
   var password = $$('#my-login-screen [name="password"]').val();
 
-  app.request.json('https://login', function (data) {
+/*   app.request.json('https://login', function (data) {
     console.log(data);
     if (data.success) {
 
     } else {
       
     }
-  });
+  }); */
 
   // Close login screen
   app.loginScreen.close('#my-login-screen');
@@ -83,9 +83,29 @@ $$('#my-login-screen .login-button').on('click', function () {
 });
 
 $$('#my-login-screen .signin-button').on('click', function () {
+
+  app.request.setup({
+    contentType: 'application/json',
+    headers: {
+      'X-Auth-Token': '42cf53ee-a2f7-458b-99d2-5577e540884b'
+    },
+    dataType: 'json'
+  });
+
+  app.request.get('http://159.65.81.55/user/3/groups', 
+  function (data) {
+    // console.log(data, JSON.stringify(data));
+    app.data.products = JSON.parse(data);
+    // console.log(products);
+  
+  },
+  function (error) {
+    console.log('error');
+  });
+
   var formData = app.form.convertToData('#user-form');
-  alert(JSON.stringify(formData));
-  console.log('signup --> ', username, password, email);
+  // alert(JSON.stringify(formData));
+  console.log('signup --> ', formData);
 });
 
 $$('#getDataTest').on('click', function () {
