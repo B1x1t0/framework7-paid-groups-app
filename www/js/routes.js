@@ -30,8 +30,12 @@ routes = [
     componentUrl: './pages/page-loader-component.html',
   },
   {
-    path: '/page-groups-component/:user/:userId/:posts/:postId/',
+    path: '/page-groups-component/',
     componentUrl: './pages/groups/page-groups-component.html',
+  },
+  {
+    path: '/settings/',
+    componentUrl: './pages/users/settings.html',
   },
   {
     path: '/product/:id/',

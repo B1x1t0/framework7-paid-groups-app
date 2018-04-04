@@ -45,16 +45,18 @@ var app  = new Framework7({
   panel: {
     leftBreakpoint: 960,
   },
+  on: {
+    pagenit: function () {
+      console.log('App initialized');
+      app.loginScreen.open('#my-login-screen');
+    }
+  }
 });
 
 // Init/Create left panel view
 var mainView = app.views.create('.view-left', {
   url: '/'
 });
-
-/* var groupsView = app.views.create('#view-groups', {
-  url: '/groups/'
-}); */
 
 // Init/Create main view
 var mainView = app.views.create('.view-main', {
@@ -66,12 +68,24 @@ $$('#my-login-screen .login-button').on('click', function () {
   var username = $$('#my-login-screen [name="username"]').val();
   var password = $$('#my-login-screen [name="password"]').val();
 
+  app.request.json('https://login', function (data) {
+    console.log(data);
+    if (data.success) {
+
+    } else {
+      
+    }
+  });
+
   // Close login screen
   app.loginScreen.close('#my-login-screen');
-
-  // Alert username and password
-  app.dialog.alert('Username: ' + username + '<br>Password: ' + password);
   
+});
+
+$$('#my-login-screen .signin-button').on('click', function () {
+  var formData = app.form.convertToData('#user-form');
+  alert(JSON.stringify(formData));
+  console.log('signup --> ', username, password, email);
 });
 
 $$('#getDataTest').on('click', function () {
@@ -79,3 +93,11 @@ $$('#getDataTest').on('click', function () {
     console.log(data);
   });
 });
+
+
+// check if in local storage user is logen in
+
+var storedData = window.localStorage['f7form-'+ 'idlogin'];
+if(!storedData) {
+  app.loginScreen.open('#my-login-screen');
+}

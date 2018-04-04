@@ -12,21 +12,9 @@
             </div>
           </div>
           <div class="page-content">
-            <div class="block-title">Events Handling</div>
-            <div class="block block-strong">
-              <a href="#" class="button button-raised" @click="openAlert">Open Alert</a>
-            </div>
-            <div class="block block-strong">
+            
 
 
-              <ul>
-                    {{#each $root.products}}
-                      <li><a href="/product/{{id}}/">{{title}}</a></li>
-                    {{/each}}
-              </ul>
-
-              
-            </div>
           </div>
         </div>
       </template>
@@ -80,7 +68,6 @@
             pageInit: function(e, page) {
               this.$app.panel.close();
               app.panel.close();
-              console.log('pageInit', page);
             },
             pageBeforeIn: function(e, page) {
               console.log('pageBeforeIn', page);

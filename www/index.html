@@ -52,9 +52,14 @@
                   <a href="/about/" data-view=".view-main" class="panel-close">About</a>
                 </li>
                 <li>
-                    <a href="/page-groups-component/vladimir/123/about-me/1/?start=0&end=30#top"
+                    <a href="/page-groups-component/"
                     data-view=".view-main">Groups</a>
                   </li>
+                <li>
+                    <a href="/page-groups-component/"
+                    data-view=".view-main">Configuración</a>
+                  </li>
+                  <li>
                 <li>
                   <a href="/form/" data-view=".view-main" class="panel-close">Form</a>
                 </li>
@@ -175,6 +180,7 @@
           <div class="page-content login-screen-content">
             <div class="login-screen-title">Login</div>
             <div class="list">
+                <form class="list form-store-data" id="user-form">
               <ul>
                 <li class="item-content item-input">
                   <div class="item-inner">
@@ -192,12 +198,24 @@
                     </div>
                   </div>
                 </li>
+                <li>
+                  <div class="item-content item-input">
+                      <div class="item-inner">
+                          <div class="item-title item-label">E-mail</div>
+                          <div class="item-input-wrap">
+                              <input name="email" type="email" placeholder="E-mail" />
+                          </div>
+                      </div>
+                  </div>
+              </li>
               </ul>
+              </form>
             </div>
             <div class="list">
               <ul>
-                <li>
-                  <a href="#" class="item-link list-button login-button">Sign In</a>
+                <li>                
+                  <a href="#" class="col button button-big button-fill button-raised color-red signin-button">Sign In</a>
+                  <a href="#" class="col button button-big button-fill button-raised color-red login-button">Login</a>
                 </li>
               </ul>
               <div class="block-footer">Some text about login information.<br>Click "Sign In" to close Login Screen</div>
